@@ -1,0 +1,98 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 262160 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=6156, tid=6828
+#
+# JRE version: 6.0_45-b06
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000063b6800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=6828, stack(0x0000000006870000,0x0000000006970000)]
+
+Stack: [0x0000000006870000,0x0000000006970000]
+
+Current CompileTask:
+C2:2675526 1210      java.lang.Class.privateGetPublicMethods()[Ljava/lang/reflect/Method; (266 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000a5f6000 JavaThread "Stdin handler" [_thread_blocked, id=9264, stack(0x00000000094e0000,0x00000000095e0000)]
+  0x000000000a5f6800 JavaThread "Daemon worker Thread 3" [_thread_in_vm, id=4092, stack(0x00000000093e0000,0x00000000094e0000)]
+  0x000000000a5f4800 JavaThread "Cancel handler" [_thread_blocked, id=9260, stack(0x00000000092e0000,0x00000000093e0000)]
+  0x000000000a5f1000 JavaThread "Handler for socket connection from /127.0.0.1:64779 to /127.0.0.1:65371" [_thread_in_native, id=8136, stack(0x00000000091e0000,0x00000000092e0000)]
+  0x000000000a5f1800 JavaThread "Daemon Thread 3" [_thread_blocked, id=6704, stack(0x00000000090e0000,0x00000000091e0000)]
+  0x00000000078a6000 JavaThread "File lock request listener" [_thread_in_native, id=7580, stack(0x00000000095e0000,0x00000000096e0000)]
+  0x00000000074d6800 JavaThread "Incoming local TCP Connector on port 64779" [_thread_in_native, id=7620, stack(0x0000000008f20000,0x0000000009020000)]
+  0x00000000063b9800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5688, stack(0x0000000006970000,0x0000000006a70000)]
+=>0x00000000063b6800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=6828, stack(0x0000000006870000,0x0000000006970000)]
+  0x00000000063b1800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=7468, stack(0x0000000006770000,0x0000000006870000)]
+  0x0000000000527000 JavaThread "Attach Listener" daemon [_thread_blocked, id=7232, stack(0x0000000006670000,0x0000000006770000)]
+  0x0000000000526000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8820, stack(0x0000000006570000,0x0000000006670000)]
+  0x000000000050c800 JavaThread "Finalizer" daemon [_thread_blocked, id=3848, stack(0x0000000006270000,0x0000000006370000)]
+  0x0000000000507800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3704, stack(0x0000000006170000,0x0000000006270000)]
+  0x000000000021c000 JavaThread "main" [_thread_blocked, id=9072, stack(0x0000000002510000,0x0000000002610000)]
+
+Other Threads:
+  0x0000000000501000 VMThread [stack: 0x0000000006070000,0x0000000006170000] [id=4300]
+  0x00000000063d4000 WatcherThread [stack: 0x0000000006a70000,0x0000000006b70000] [id=5552]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 42560K, used 3905K [0x00000000eaab0000, 0x00000000ee2c0000, 0x0000000100000000)
+  eden space 39040K, 1% used [0x00000000eaab0000,0x00000000eab1c4e0,0x00000000ed0d0000)
+  from space 3520K, 98% used [0x00000000edf50000,0x00000000ee2b4030,0x00000000ee2c0000)
+  to   space 7360K, 0% used [0x00000000ed460000,0x00000000ed460000,0x00000000edb90000)
+ PSOldGen        total 53824K, used 29645K [0x00000000c0000000, 0x00000000c3490000, 0x00000000eaab0000)
+  object space 53824K, 55% used [0x00000000c0000000,0x00000000c1cf3498,0x00000000c3490000)
+ PSPermGen       total 133504K, used 69570K [0x00000000b0000000, 0x00000000b8260000, 0x00000000c0000000)
+  object space 133504K, 52% used [0x00000000b0000000,0x00000000b43f0b70,0x00000000b8260000)
+
+Code Cache  [0x0000000002610000, 0x0000000002b50000, 0x0000000005610000)
+ total_blobs=1765 nmethods=1145 adapters=572 free_code_cache=44914176 largest_free_block=12800
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Program Files\Java\jdk1.6.0_45\bin\java.exe
+0x00000000772f0000 - 0x0000000077499000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000771d0000 - 0x00000000772ef000 	C:\Windows\system32\kernel32.dll
+0x000007fefd2a0000 - 0x000007fefd30c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff3b0000 - 0x000007feff48b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd880000 - 0x000007fefd91f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd920000 - 0x000007fefd93f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefd680000 - 0x000007fefd7ad000 	C:\Windows\system32\RPCRT4.dll
+0x000000006d8e0000 - 0x000000006e09c000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\server\jvm.dll
+0x00000000770d0000 - 0x00000000771ca000 	C:\Windows\system32\USER32.dll
+0x000007fefe270000 - 0x000007fefe2d7000 	C:\Windows\system32\GDI32.dll
+0x000007feff2d0000 - 0x000007feff2de000 	C:\Windows\system32\LPK.dll
+0x000007fefd7b0000 - 0x000007fefd879000 	C:\Windows\system32\USP10.dll
+0x000007fef8710000 - 0x000007fef874b000 	C:\Windows\system32\WINMM.dll
+0x000007fefe010000 - 0x000007fefe03e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefdf00000 - 0x000007fefe009000 	C:\Windows\system32\MSCTF.dll
+0x000007fefd180000 - 0x000007fefd1e9000 	C:\PROGRA~1\Citrix\System32\MFAPHOOK64.DLL
+0x000007fefd060000 - 0x000007fefd09c000 	C:\Program Files\Citrix\ICAService\ShellHook64.dll
+0x000007fefd9e0000 - 0x000007fefdbe3000 	C:\Windows\system32\ole32.dll
+0x000007feff330000 - 0x000007feff3a1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe540000 - 0x000007feff2c8000 	C:\Windows\system32\SHELL32.dll
+0x000007fefce50000 - 0x000007fefcfda000 	C:\Program Files\Citrix\ICAService\SCardHook64.dll
+0x000007fefcda0000 - 0x000007fefcdc6000 	C:\Program Files\Citrix\ICAService\cxinjime64.dll
+0x000000006d850000 - 0x000000006d85e000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\verify.dll
+0x000000006d460000 - 0x000000006d487000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\java.dll
